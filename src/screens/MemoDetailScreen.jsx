@@ -32,17 +32,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   memoHeader: {
-    backgroundColor: '#467fd3',
     height: 96,
-    justifyContent: 'center',
     paddingVertical: 24,
     paddingHorizontal: 19,
+    backgroundColor: '#467fd3',
+    justifyContent: 'center',
   },
   memoTitle: {
     color: '#ffffff',
     fontSize: 20,
-    lineHeight: 32,
     fontWeight: 'bold',
+    lineHeight: 32,
   },
   memoDate: {
     color: '#ffffff',
