@@ -21,10 +21,12 @@ export default function MemoDetailScreen(props) {
       const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
       unsubscribe = ref.onSnapshot((doc) => {
         const data = doc.data();
+        const jpTime = data.updatedAt.toDate();
+        jpTime.setHours(jpTime.getHours() + 9);
         setMemo({
           id: doc.id,
           bodyText: data.bodyText,
-          updatedAt: data.updatedAt.toDate(),
+          updatedAt: jpTime,
         });
       });
     }

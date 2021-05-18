@@ -31,10 +31,12 @@ export default function MemoListScreen(props) {
         const userMemos = [];
         snapshot.forEach((doc) => {
           const data = doc.data();
+          const jpTime = data.updatedAt.toDate();
+          jpTime.setHours(jpTime.getHours() + 9);
           userMemos.push({
             id: doc.id,
             bodyText: data.bodyText,
-            updatedAt: data.updatedAt.toDate(),
+            updatedAt: jpTime,
           });
         });
         setMemos(userMemos);
